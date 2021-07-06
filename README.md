@@ -8,7 +8,7 @@ ES Extended (ESX) 1.2
 
 esx_policejob
 
-#[Features]:
+# [Features]:
 
 1. Processed to be used by weight
 
