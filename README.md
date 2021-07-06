@@ -4,7 +4,7 @@
 MySQ
 EssentialMode Base by @Kanersps
 
-ES Extended (ESX) 1.2 
+ES Extended (ESX)
 
 esx_policejob
 
