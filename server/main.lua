@@ -55,7 +55,7 @@ ESX.RegisterServerCallback('esx_illegal:canPickUp', function(source, cb, item)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local xItem = xPlayer.getInventoryItem(item)
 
-	if xItem.weight ~= -1 and xItem.count >= xItem.weight then
+	if xItem.Config.base.limitorweight ~= -1 and xItem.count >= Config.base.limitorweight then
 		cb(false)
 	else
 		cb(true)

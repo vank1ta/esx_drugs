@@ -1,8 +1,10 @@
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
+fx_version 'cerulean'
+games      { 'gta5' }
+lua54 'yes'
 
-description 'ESX Drugs by DoPeMan'
-
-version '1.0.0'
+author 'Vank1ta Scripts | 𝘃𝗮𝗻𝗸𝟭𝘁𝗮#9391'
+description 'ESX Drugs by DoPeMan edit code by vank1ta'
+version '1.0.1'
 
 server_scripts {
 	'@mysql-async/lib/MySQL.lua',

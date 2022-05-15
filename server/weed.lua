@@ -5,7 +5,7 @@ AddEventHandler('esx_illegal:pickedUpCannabis', function()
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local xItem = xPlayer.getInventoryItem('cannabis')
 
-	if xItem.weight ~= -1 and (xItem.count + 1) > xItem.weight then
+	if xItem.Config.base.limitorweight ~= -1 and (xItem.count + 1) > xItem.Config.base.limitorweight then
 		TriggerClientEvent('esx:showNotification', _source, _U('weed_inventoryfull'))
 	else
 		xPlayer.addInventoryItem(xItem.name, 1)
@@ -21,7 +21,7 @@ AddEventHandler('esx_illegal:processCannabis', function()
 			local xPlayer = ESX.GetPlayerFromId(_source)
 			local xCannabis, xMarijuana = xPlayer.getInventoryItem('cannabis'), xPlayer.getInventoryItem('weed4g')
 
-			if xMarijuana.weight ~= -1 and (xMarijuana.count + 1) > xMarijuana.weight then
+			if xMarijuana.Config.base.limitorweight ~= -1 and (xMarijuana.count + 1) > xMarijuana.Config.base.limitorweight then
 				TriggerClientEvent('esx:showNotification', _source, _U('weed_processingfull'))
 			elseif xCannabis.count < 2 then
 				TriggerClientEvent('esx:showNotification', _source, _U('weed_processingenough'))

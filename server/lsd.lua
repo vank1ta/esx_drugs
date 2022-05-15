@@ -9,7 +9,7 @@ AddEventHandler('esx_illegal:processLSD', function()
 			local xPlayer = ESX.GetPlayerFromId(_source)
 			local xLSA, xThionylChloride, xLSD = xPlayer.getInventoryItem('lsa'), xPlayer.getInventoryItem('thionyl_chloride'), xPlayer.getInventoryItem('lsd')
 
-			if xLSD.weight ~= -1 and (xLSD.count + 1) > xLSD.weight then
+			if xLSD.Config.base.limitorweight ~= -1 and (xLSD.count + 1) > xLSD.Config.base.limitorweight then
 				TriggerClientEvent('esx:showNotification', _source, _U('lsd_processingfull'))
 			elseif xLSA.count < 1 and xThionylChloride.count < 1 then
 				TriggerClientEvent('esx:showNotification', _source, _U('lsd_processingenough'))
@@ -37,7 +37,7 @@ AddEventHandler('esx_illegal:processThionylChloride', function()
 			local xPlayer = ESX.GetPlayerFromId(_source)
 			local xLSA, xChemicals, xThionylChloride = xPlayer.getInventoryItem('lsa'), xPlayer.getInventoryItem('chemicals'), xPlayer.getInventoryItem('thionyl_chloride')
 
-			if xThionylChloride.weight ~= -1 and (xThionylChloride.count + 1) > xThionylChloride.weight then
+			if xThionylChloride.Config.base.limitorweight ~= -1 and (xThionylChloride.count + 1) > xThionylChloride.Config.base.limitorweight then
 				TriggerClientEvent('esx:showNotification', _source, _U('thionylchloride_processingfull'))
 			elseif xLSA.count < 1 or xChemicals.count < 1 then
 				TriggerClientEvent('esx:showNotification', _source, _U('thionylchloride_processingenough'))

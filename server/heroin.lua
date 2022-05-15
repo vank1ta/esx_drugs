@@ -5,7 +5,7 @@ AddEventHandler('esx_illegal:pickedUpPoppy', function()
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local xItem = xPlayer.getInventoryItem('poppyresin')
 
-	if xItem.weight ~= -1 and (xItem.count + 1) > xItem.weight then
+	if xItem.Config.base.limitorweight ~= -1 and (xItem.count + 1) > xItem.Config.base.limitorweight then
 		TriggerClientEvent('esx:showNotification', _source, _U('poppy_inventoryfull'))
 	else
 		xPlayer.addInventoryItem(xItem.name, 1)
@@ -21,7 +21,7 @@ AddEventHandler('esx_illegal:processPoppyResin', function()
 			local xPlayer = ESX.GetPlayerFromId(_source)
 			local xPoppyResin, xHeroin = xPlayer.getInventoryItem('poppyresin'), xPlayer.getInventoryItem('heroin')
 
-			if xHeroin.weight ~= -1 and (xHeroin.count + 1) > xHeroin.weight then
+			if xHeroin.Config.base.limitorweight ~= -1 and (xHeroin.count + 1) > xHeroin.Config.base.limitorweight then
 				TriggerClientEvent('esx:showNotification', _source, _U('heroin_processingfull'))
 			elseif xPoppyResin.count < 1 then
 				TriggerClientEvent('esx:showNotification', _source, _U('heroin_processingenough'))

@@ -5,7 +5,7 @@ AddEventHandler('esx_illegal:pickedUpChemicals', function()
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local xItem = xPlayer.getInventoryItem('chemicals')
 
-	if xItem.weight ~= -1 and (xItem.count + 1) > xItem.weight then
+	if xItem.Config.base.limitorweight ~= -1 and (xItem.count + 1) > xItem.Config.base.limitorweight then
 		TriggerClientEvent('esx:showNotification', _source, _U('Chemicals_inventoryfull'))
 	else
 		xPlayer.addInventoryItem(xItem.name, 1)

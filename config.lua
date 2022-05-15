@@ -26,6 +26,10 @@ Config.ChemicalsConvertionItems = {
 	lsa = 0,
 }
 
+Config.base = {
+	limitorweight = "weight" -- Change this to a limit if your base works with a limit and not a weight.
+}
+
 Config.ChemicalsLicenseEnabled = false --Will Enable or Disable the need for a Chemicals License.
 Config.MoneyWashLicenseEnabled = false --Will Enable or Disable the need for a MoneyWash License.
 
